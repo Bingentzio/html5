@@ -1,13 +1,7 @@
-<!doctype html>
-<html>
-
-  <head>
-
-   <script>
 	function Liburu(izenburu, egile, salneurri){
-		this.izenburua = izenburu;
-		this.egilea = egile;
-		this.salneurria = salneurri;
+
+		Produktu.apply(this, [izenburu, egile, salneurri]);
+
 		var _unekoOrrialdea = 0;
 		
 		this.bistaratu = function(){
@@ -25,12 +19,7 @@
 			console.log("Orrialde honetan nago:" + _unekoOrrialdea);
 		}
 	}
+	Liburu.prototype = new Produktu();
+	Liburu.prototype.constructor = Liburu;
 
-	var liburu1 = new Liburu("aaaaa", "bbbbbb", 123);
-	var liburu2 = new Liburu("ccccc", "dddddd", 456); 
-  </script>
-</head>
-<body>
 
-</body>
-</html>
