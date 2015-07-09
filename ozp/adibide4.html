@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+  <head>
+
+   <script>
+	function Liburu(izenburu, egile, salneurri){
+		this.izenburua = izenburu;
+		this.egilea = egile;
+		this.salneurria = salneurri;
+		var _unekoOrrialdea = 0;
+		
+		this.bistaratu = function(){
+			console.log("Liburuaren izenburua:" + this.izenburu);
+		}
+
+		this.markadorea = function(orrialde){
+			_unekoOrrialdea = orrialde;
+			this.lortuOrrialdea();
+		}
+		this.hurrengoOrrialderaJoan = function(){
+			_unekoOrrialdea++;
+		}
+		this.lortuOrrialdea = function(){
+			console.log("Orrialde honetan nago:" + _unekoOrrialdea);
+		}
+	}
+
+	var liburu1 = new Liburu("aaaaa", "bbbbbb", 123);
+	var liburu2 = new Liburu("ccccc", "dddddd", 456); 
+  </script>
+</head>
+<body>
+
+</body>
+</html>
