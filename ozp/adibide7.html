@@ -5,26 +5,37 @@
 
    <script>
 
-	function Produktu(izenburu, egile, salneurri) { 
+	var Produktu = function Produktu(izenburu, egile, salneurri) { 
 		this.izenburua = izenburu;
 		this.egilea = egile;
 		this.salneurria = salneurri; 
 	}
 
 	Produktu.prototype.bistaratu = function() {
-		console.log("Produktuaren izena:" + this.izena);
+		console.log("Produktuaren izena:" + this.izenburua);
 	}
 
-	function Liburu(izenburu, egile, salneurri){
+	var Disko = function Disko(izenburu, egile, salneurri, formatu) {
+		Produktu.apply(this, [izenburu, egile, salneurri]);
+		this.formatu = function() {
+			console.log("Diskoaren formatua:" + formatu);
+		}
+	}
+
+	Disko.prototype = new Produktu();
+	Disko.prototype.constructor = Disko;
+
+
+	var Liburu = function Liburu(izenburu, egile, salneurri){
 
 		Produktu.apply(this, [izenburu, egile, salneurri]);
 
 		var _unekoOrrialdea = 0;
-		
-		this.bistaratu = function(){
-			console.log("Liburuaren izenburua:" + this.izenburu);
-		}
 
+		this.bistaratu = function() {
+			console.log("Liburuak bere bistaratu metodo propioa dauka. Gainidatzi egin dugu bistaratu metodoa");
+		};
+		
 		this.markadorea = function(orrialde){
 			_unekoOrrialdea = orrialde;
 			this.lortuOrrialdea();
@@ -39,9 +50,8 @@
 	Liburu.prototype = new Produktu();
 	Liburu.prototype.constructor = Liburu;
 
-	var liburu1 = new Liburu("aaaaa", "bbbbbb", 123);
-	var liburu2 = new Liburu("ccccc", "dddddd", 456); 
-  </script>
+  	
+    </script>
 </head>
 <body>
 
