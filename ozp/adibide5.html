@@ -5,36 +5,38 @@
 
    <script>
 
-	function Produktu() { }
-	Produktu.prototype.bistaratu = function() {
-		console.log("Produktuaren izena:" + this.izena);
-	}
+	var Produktu = function Produktu() { };
 
-	function Liburu(izenburu, egile, salneurri){
+	Produktu.prototype.bistaratu = function() {
+		console.log("Produktuaren izena");
+	};
+
+	var Liburu = function Liburu(izenburu, egile, salneurri){
 		this.izenburua = izenburu;
 		this.egilea = egile;
 		this.salneurria = salneurri;
 		var _unekoOrrialdea = 0;
 		
-		this.bistaratu = function(){
-			console.log("Liburuaren izenburua:" + this.izenburu);
-		}
-
 		this.markadorea = function(orrialde){
 			_unekoOrrialdea = orrialde;
 			this.lortuOrrialdea();
-		}
+		};
+
 		this.hurrengoOrrialderaJoan = function(){
 			_unekoOrrialdea++;
-		}
+		};
+
 		this.lortuOrrialdea = function(){
 			console.log("Orrialde honetan nago:" + _unekoOrrialdea);
-		}
-	}
-	Liburu.prototype = new Produktu();
+		};
+	};
 
-	var liburu1 = new Liburu("aaaaa", "bbbbbb", 123);
-	var liburu2 = new Liburu("ccccc", "dddddd", 456); 
+	Liburu.prototype = new Produktu();
+	Liburu.prototype.constructor = Liburu;
+
+	var liburu1 = new Liburu("Eulien bazka", "Hasier Etxeberria", 14);
+	var liburu2 = new Liburu("Black is beltza", "Fermin Muguruza", 15); 
+
   </script>
 </head>
 <body>
