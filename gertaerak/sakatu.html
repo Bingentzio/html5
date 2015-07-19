@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+  <title></title>
+<script>
+
+var funtzioX = function(){
+	console.log("X funtzioa");
+}, 
+
+funtzioY = function(){
+	console.log("Y funtzioa");
+};
+
+window.onload = function() {
+
+ var botoia = document.getElementById("botoia");
+
+ botoia.addEventListener('click', funtzioX, false);
+ botoia.addEventListener('click', funtzioY, false);
+ botoia.removeEventListener('click', funtzioY, false);
+
+}
+
+</script>
+
+</head>
+<body>
+
+<button id="botoia">
+Sakatu hemen
+</button>
+
+
+</body>
+</html>
