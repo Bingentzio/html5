@@ -8,9 +8,9 @@
    <script src="skriptak/liburu.js"></script>
 
    <script>
-	var liburu1 = new Liburu("aaaaa", "bbbbbb", 123);
-	var liburu2 = new Liburu("ccccc", "dddddd", 456);
-	var disko1 = new Disko("izen", "egile", 123, "mp3");
+	var liburu1 = new Liburu("Eulien bazka", "Hasier Etxeberria", 14);
+	var liburu2 = new Liburu("Black is beltza", "Fermin Muguruza", 15); 
+	var disko1 = new Disko("Ikusi eta Ikasi", "Delirium Tremens", 20, "mp3");
 
 	var denda = [];
 	denda.push(liburu1, liburu2, disko1);
@@ -18,9 +18,9 @@
 	window.onload = function() {
 
 		var zerrenda = document.getElementById('zerrenda');
-		for (var produktu of tienda) {
+		for (var produktu of denda) {
 			var edukia = document.createElement('div');
-			edukia.innerHTML = denda[produktu].bistaratu();
+			edukia.innerHTML = produktu.bistaratu();
 			zerrenda.appendChild(edukia);
 		}
 	}
