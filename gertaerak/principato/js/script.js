@@ -6,7 +6,7 @@ function kudeatzaileakHasieratu()
 		console.log("Irudian sakatu duzu");
 	}
 
-        var erabiltzaile = document.getElementById("erabiltzaile");
+	var erabiltzaile = document.getElementById("erabiltzaile");
 	erabiltzaile.value = 'zure@emaila';
 
 	erabiltzaile.onblur = function(){
@@ -14,29 +14,28 @@ function kudeatzaileakHasieratu()
 			erabiltzaile.value = "zure@emaila";
 		}
 	};
-
 	erabiltzaile.onfocus = function(){
 		if (erabiltzaile.value == 'zure@emaila'){
 			erabiltzaile.value = '';
 		}
 	};
 
-	var zerrenda = document.getElementById("combobox");
-	zerrenda.addEventListener("change",zerrendaKudeatzaile);
+	var item = document.getElementById("combobox");
+	item.addEventListener("change",zerrendaKudeatzaile);
 
 	function zerrendaKudeatzaile(){
-		console.log(zerrenda.value);
-		console.log(zerrenda.options[item.selectedIndex].text);
-		console.log(zerrenda.selectedIndex);
+		console.log(item.value);
+		console.log(item.selectedIndex);
+		console.log(item.options[item.selectedIndex].text);
 	} 
 
 	var inprimakia = document.getElementById('inprimakia');
 	inprimakia.onsubmit = function(){
-		console.log("submit botoian sakatu duzu");
-		 // eremuen balioak egiaztatu. Baten bat bete gabe badago 
-            	// false bueltatu. Bestela, true bueltatu.
+		console.log("submit botoia sakatu duzu");
+            // eremuen balioak egiaztatu. Baten bat bete gabe badago 
+            // false bueltatu. Bestela, true bueltatu.
 		return false;
-	};
+	}
 
 }
 
